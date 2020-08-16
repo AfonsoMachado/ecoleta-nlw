@@ -2,6 +2,7 @@
   width: 90%;
   max-width: 1100px;
 
+  /* alinhamento da box pelo lado de fora */
   margin: 0 auto;
 }
 
@@ -27,4 +28,14 @@
   width: 20px;
   height: 24px;
   display: flex;
+}
+
+form {
+  background-color: #fff;
+  margin: 80px auto;
+  padding: 64px;
+  border-radius: 8px;
+  max-width: 730px;
+
+  /* aplica largura e altura na box e não no conteudo */
 }
