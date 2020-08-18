@@ -47,3 +47,43 @@ function getCities(event) {
 document
   .querySelector('select[name=uf]')
   .addEventListener('change', getCities)
+
+// --------------ITENS DE COLETA ------------
+
+// Pegando todos os LI
+const itemsToCollect = document.querySelectorAll('.items-grid li')
+
+for (const item of itemsToCollect) {
+  // Evento de clique para cada item
+  item.addEventListener('click', handleSelectedItem)
+}
+
+const collctedItems = document.querySelector('input[name=items]')
+let selectedItems = []
+
+function handleSelectedItem(event) {
+  const itemLi = event.target
+
+  // adicionar ou remover uma classe, para marcar como selecionado o item
+  itemLi.classList.toggle('selected')
+
+  // capturando o id do elemento clicado
+  const itemId = itemLi.dataset.id
+
+  // Verifica se existem items selecionados, e pega os selecionados
+  const alreadySelected = selectedItems.findIndex(item => item == itemId)
+
+  // se ja estiver selecionado, tira o item da lista de seleções
+  if (alreadySelected >= 0) {
+    // tira da seleção
+    const filteredItems = selectedItems.filter(item => item != itemId)
+    selectedItems = filteredItems
+  }
+  // Se nao estiver selecionado, adiciona a lista de seleções
+  else {
+    selectedItems.push(itemId)
+  }
+  // Atualiza o input hidden de items com os itens selecionados
+  collctedItems.value = selectedItems
+
+}
