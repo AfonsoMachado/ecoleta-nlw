@@ -1,49 +1,38 @@
-<!DOCTYPE html>
-<html lang="pt_br">
+{# Herdando as propriedades #}
+{% extends "layout.html" %}
+{% set bodyId = 'page-home' %}
 
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Ecoleta</title>
+{% block styles %}
+  <link rel="stylesheet" href="styles/home.css"/>
+  <link rel="stylesheet" href="styles/modal.css"/>
+{% endblock styles %}
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+{% block content %}
+  <div class="content">
+    <header>
+      <img src="/assets/logo.svg" alt="Logo">
+      <a href="/create-point">
+        <span></span>
+        Cadastre um ponto de coleta
+      </a>
+    </header>
 
-    <link rel="stylesheet" href="styles/main.css"/>
-    <link rel="stylesheet" href="styles/home.css"/>
-    <link rel="stylesheet" href="styles/modal.css"/>
-    <link rel="stylesheet" href="styles/responsive.css"/>
-  </head>
+    <main>
+      <h1>Seu marketplace de coleta de resíduos</h1>
+      <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>
 
-  <body>
+      <a href="#">
+        <span></span>
+        <strong>Pesquisar pontos de coleta</strong>
+      </a>
+    </main>
+  </div>
+{% endblock content %}
 
-    <div id="page-home">
+{% block modal %}
+  {% include "partials/modal.html" %}
+{% endblock modal %}
 
-      <div class="content">
-        <header>
-          <img src="/assets/logo.svg" alt="Logo">
-          <a href="/create-point">
-            <span></span>
-            Cadastre um ponto de coleta
-          </a>
-        </header>
-
-        <main>
-          <h1>Seu marketplace de coleta de resíduos</h1>
-          <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>
-
-          <a href="#">
-            <span></span>
-            <strong>Pesquisar pontos de coleta</strong>
-          </a>
-        </main>
-
-      </div>
-    </div>
-
-    {% include "partials/modal.html" %}
-
-    <script src="/scripts/index.js"></script>
-
-  </body>
-
-</html>
+{% block scripts %}
+  <script src="/scripts/index.js"></script>
+{% endblock scripts %}
