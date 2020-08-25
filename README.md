@@ -2,7 +2,7 @@
    <img src="https://github.com/AfonsoMachado/ecoleta-nlw/blob/master/public/assets/logo.svg" alt="Turma" width="350"/>   
 </p>
 
-<p align="center">:rocket: Projeto implementado durante o evento Next Level Week #01, organizado pela Rocketseat, com o objetivo de durante uma semana desenvolver um projeto completo aplicando conceitos e ferramentas de desenvolvimento web.</p>
+<p align="center">:rocket: Projeto implementado durante o evento Next Level Week #01, organizado pela <a href="https://rocketseat.com.br/">Rocketseat</a>, com o objetivo de durante uma semana desenvolver um projeto completo aplicando conceitos e ferramentas de desenvolvimento web.</p>
 
 <p align="center">O Ecoleta é uma plataforma que funciona como um catálogo de locais que realizam coleta de materiais recicláveis e que não podem ser descartados no lixo comum.</p>
 
