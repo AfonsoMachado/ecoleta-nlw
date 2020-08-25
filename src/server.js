@@ -25,7 +25,7 @@ server.get('/', (req, res) => {
 })
 
 server.get('/create-point', (req, res) => {
-  console.log(req.query);
+  // console.log(req.query);
 
   return res.render('create-point.html')
 })
@@ -62,7 +62,7 @@ server.post('/save-point', (req, res) => {
     console.log("Cadastrado com sucesso!");
     console.log(this);
 
-    return res.send("OK")
+    return res.render("create-point.html", { saved: true })
   }
 
   // inserindo dados
