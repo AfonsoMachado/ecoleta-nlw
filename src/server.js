@@ -6,6 +6,9 @@ const db = require('./database/db');
 // acessando pasta publica
 server.use(express.static("public"))
 
+// habilitar o uso do req.body
+server.use(express.urlencoded({ extended: true }))
+
 // TEMPLATE ENGINE
 const nunjucks = require('nunjucks');
 nunjucks.configure('src/views', {
@@ -22,7 +25,14 @@ server.get('/', (req, res) => {
 })
 
 server.get('/create-point', (req, res) => {
+  console.log(req.query);
+
   return res.render('create-point.html')
+})
+
+server.post('/save-point', (req, res) => {
+  console.log(req.body);
+  return res.send("OK")
 })
 
 server.get('/search', (req, res) => {
