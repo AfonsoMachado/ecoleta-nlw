@@ -1,6 +1,7 @@
 const express = require('express')
 const server = express()
 const port = 3000
+const db = require('./database/db');
 
 // acessando pasta publica
 server.use(express.static("public"))
@@ -25,7 +26,19 @@ server.get('/create-point', (req, res) => {
 })
 
 server.get('/search', (req, res) => {
-  return res.render('search-results.html')
+
+  // consultando dados
+  db.all(`SELECT * FROM places`, function (err, rows) {
+    if (err) {
+      return console.log(err);
+    }
+    const total = rows.length
+
+    //console.log("Aqui estão seus registros:")
+    //console.log(rows);
+    //  mostrar a pagina html com os dados do banco de dados
+    return res.render('search-results.html', { places: rows, total: total })
+  })
 })
 
 server.listen(port)
